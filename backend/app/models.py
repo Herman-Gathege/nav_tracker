@@ -20,3 +20,28 @@ class NavSnapshot(db.Model):
             "total_aum": self.total_aum,
             "nav_per_share": self.nav_per_share
         }
+
+
+class Config(db.Model):
+    __tablename__ = 'config'
+    id = db.Column(db.Integer, primary_key=True)
+    key = db.Column(db.String(50), unique=True, nullable=False)
+    value = db.Column(db.Float, nullable=False)
+
+
+class Purchase(db.Model):
+    __tablename__ = 'purchases'
+    id = db.Column(db.Integer, primary_key=True)
+    amount_usd = db.Column(db.Float, nullable=False)
+    shares_issued = db.Column(db.Float, nullable=False)
+    fee_applied = db.Column(db.Float, nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class Sale(db.Model):
+    __tablename__ = 'sales'
+    id = db.Column(db.Integer, primary_key=True)
+    shares_sold = db.Column(db.Float, nullable=False)
+    amount_returned_usd = db.Column(db.Float, nullable=False)
+    fee_applied = db.Column(db.Float, nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)

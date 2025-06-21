@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../styles/NavHistory.css'; // Import the custom CSS
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "../styles/NavHistory.css"; // Import the custom CSS
 
 const NavHistory = () => {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/nav/history')
-      .then(res => setHistory(res.data))
-      .catch(err => console.error("Error fetching NAV history:", err));
+    axios
+      .get("http://localhost:5000/api/nav/history")
+      .then((res) => setHistory(res.data))
+      .catch((err) => console.error("Error fetching NAV history:", err));
   }, []);
 
   return (
     <div className="nav-history-container">
-      <h2 className="nav-history-title">📈 NAV / AUM History</h2>
+      <h2 className="nav-history-title">NAV / AUM History</h2>
+      <p className="nav-history-subtitle">
+        (Net Asset Value & Assets Under Management)
+      </p>
       <div className="table-wrapper">
         <table className="nav-history-table">
           <thead>
             <tr>
-              <th>Date</th>
+              <th>Date | Time in UTC</th>
               <th>ETH (USD)</th>
               <th>SOL (USD)</th>
               <th>Total AUM</th>
@@ -28,10 +32,12 @@ const NavHistory = () => {
           <tbody>
             {history.length === 0 ? (
               <tr>
-                <td colSpan="5" className="empty-row">No data available</td>
+                <td colSpan="5" className="empty-row">
+                  No data available
+                </td>
               </tr>
             ) : (
-              history.map(entry => (
+              history.map((entry) => (
                 <tr key={entry.id}>
                   <td>{new Date(entry.timestamp).toLocaleString()}</td>
                   <td>${entry.eth_usd.toFixed(2)}</td>

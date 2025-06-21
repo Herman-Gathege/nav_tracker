@@ -1,18 +1,33 @@
 .nav-history-container {
-  background-color: #fff;
-  padding: 2rem;
-  margin: 2rem auto;
+  background: #fff;
   border-radius: 12px;
-  max-width: 1000px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nav-history-container h2 {
+  color: #2C3E50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-history-container p {
+  color: #2C3E50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .nav-history-title {
-  font-size: 1.8rem;
-  font-weight: bold;
+  color: #2C3E50;
   margin-bottom: 1.5rem;
-  color: #333;
   text-align: center;
+  font-size: 1.75rem;
 }
 
 .table-wrapper {
@@ -22,29 +37,28 @@
 .nav-history-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
-}
-
-.nav-history-table thead {
-  background-color: #f4f4f4;
-  text-transform: uppercase;
 }
 
 .nav-history-table th,
 .nav-history-table td {
-  padding: 12px 16px;
-  text-align: left;
-  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-history-table th {
+  background: #f5f7fa;
+  color: #2C3E50;
+  font-weight: 600;
 }
 
 .nav-history-table tbody tr:hover {
-  background-color: #fafafa;
-  transition: background 0.2s ease-in-out;
+  background-color: #f0f4f8;
 }
 
 .empty-row {
+  padding: 1.5rem;
   text-align: center;
   color: #999;
   font-style: italic;
-  padding: 20px;
 }

@@ -1,6 +1,9 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+
+
+
 from app import create_app, db
 from app.tasks.daily_nav import run_daily_snapshot
 
