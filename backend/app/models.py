@@ -22,6 +22,7 @@ class NavSnapshot(db.Model):
         }
 
 
+# The Config model is used to store configuration settings for the application.
 class Config(db.Model):
     __tablename__ = 'config'
     id = db.Column(db.Integer, primary_key=True)
